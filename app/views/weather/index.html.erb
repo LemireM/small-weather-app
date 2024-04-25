@@ -1,0 +1,18 @@
+<h1>Weather Forecast</h1>
+
+<% if @error %>
+  <p><strong>Error:</strong> <%= @error %></p>
+<% else %>
+  <% if @weather %>
+    <p><strong>Current Temperature:</strong> <%= (@weather["current"]["temp"] -273.15).round %> °C</p>
+    <p><strong>Weather Conditions:</strong> <%= @weather["current"]["weather"].first["description"] %></p>
+    <h2>Daily Forecast</h2>
+    <ul>
+      <% @weather["daily"].each do |daily_data| %>
+        <li><%= Time.at(daily_data["dt"]).strftime("%Y-%m-%d") %> - <%= (daily_data["temp"]["day"] -273.15).round %> °C, <%= daily_data["weather"].first["description"] %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>No weather data available</p>
+  <% end %>
+<% end %>
