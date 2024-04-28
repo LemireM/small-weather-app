@@ -10,4 +10,6 @@
   <p>Temperature: <%= (@weather['current']['temp'] - 273.15).round %>ºC</p>
   <p>Humidity: <%= @weather['current']['humidity'] %>%</p>
   <p>Description: <%= @weather['current']['weather'].first['description'] %></p>
+  <% elsif @error%>
+  <p><%= @error %></p>
 <% end %>
