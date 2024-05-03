@@ -1,7 +1,7 @@
 <div class="container">
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1596627008830-41d373a44a96?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
-    <h1 class='title'>Weather Forecast</h1>
-    <p>Let's find a city</p>
+    <h1 class='title'>Welcome to Small Weather App!</h1>
+    <p>search for a city to get its weather forecast</p>
   </div>
     <%= form_tag(weather_index_path, method: :get, class: "search-form") do %>
       <%= text_field_tag :city, params[:city], class: "search-input" %>
