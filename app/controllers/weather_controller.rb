@@ -10,7 +10,7 @@ class WeatherController < ApplicationController
         response = Net::HTTP.get(uri)
         @weather = JSON.parse(response)
       else
-        @error = "It seems this city does not exist. Please try again."
+        @error = 'It seems this city does not exist. Please try again.'
       end
     end
   end
